@@ -195,15 +195,69 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907310953548_UpdateAllData.cs" />
+    <Compile Include="Migrations\201907310953548_UpdateAllData.Designer.cs">
+      <DependentUpon>201907310953548_UpdateAllData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907311307496_ForAuthentication.cs" />
+    <Compile Include="Migrations\201907311307496_ForAuthentication.Designer.cs">
+      <DependentUpon>201907311307496_ForAuthentication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907311311075_upgradeMigration.cs" />
+    <Compile Include="Migrations\201907311311075_upgradeMigration.Designer.cs">
+      <DependentUpon>201907311311075_upgradeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907311316534_AuthenticateUpgrade.cs" />
+    <Compile Include="Migrations\201907311316534_AuthenticateUpgrade.Designer.cs">
+      <DependentUpon>201907311316534_AuthenticateUpgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908010844005_AuthenticateUpgrade12.cs" />
+    <Compile Include="Migrations\201908010844005_AuthenticateUpgrade12.Designer.cs">
+      <DependentUpon>201908010844005_AuthenticateUpgrade12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908011058295_updatedcarvalidation.cs" />
+    <Compile Include="Migrations\201908011058295_updatedcarvalidation.Designer.cs">
+      <DependentUpon>201908011058295_updatedcarvalidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908020449136_ValidationUpdate.cs" />
+    <Compile Include="Migrations\201908020449136_ValidationUpdate.Designer.cs">
+      <DependentUpon>201908020449136_ValidationUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908020642221_AlterTableMigration.cs" />
+    <Compile Include="Migrations\201908020642221_AlterTableMigration.Designer.cs">
+      <DependentUpon>201908020642221_AlterTableMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908020646044_AlterTableMigration1.cs" />
+    <Compile Include="Migrations\201908020646044_AlterTableMigration1.Designer.cs">
+      <DependentUpon>201908020646044_AlterTableMigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908021238139_akki.cs" />
+    <Compile Include="Migrations\201908021238139_akki.Designer.cs">
+      <DependentUpon>201908021238139_akki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908021345481_FinalUpdate.cs" />
+    <Compile Include="Migrations\201908021345481_FinalUpdate.Designer.cs">
+      <DependentUpon>201908021345481_FinalUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Car.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\ServiceType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CustAndCustViewModel.cs" />
+    <Compile Include="ViewModels\CustomerCarViewModel.cs" />
+    <Compile Include="ViewModels\ServiceViewModel.cs" />
+    <Compile Include="ViewModels\SingleCustomerCarViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BackgroundImage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\validation.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -258,9 +312,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\AddCustomerForm.cshtml" />
+    <Content Include="Views\Home\ViewCars.cshtml" />
+    <Content Include="Views\Home\AddNewCarForm.cshtml" />
+    <Content Include="Views\Home\EditCustomerForm.cshtml" />
+    <Content Include="Views\Home\EditCarForm.cshtml" />
+    <Content Include="Views\Home\ViewServices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -274,6 +335,41 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907310953548_UpdateAllData.resx">
+      <DependentUpon>201907310953548_UpdateAllData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907311307496_ForAuthentication.resx">
+      <DependentUpon>201907311307496_ForAuthentication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907311311075_upgradeMigration.resx">
+      <DependentUpon>201907311311075_upgradeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907311316534_AuthenticateUpgrade.resx">
+      <DependentUpon>201907311316534_AuthenticateUpgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908010844005_AuthenticateUpgrade12.resx">
+      <DependentUpon>201908010844005_AuthenticateUpgrade12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908011058295_updatedcarvalidation.resx">
+      <DependentUpon>201908011058295_updatedcarvalidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908020449136_ValidationUpdate.resx">
+      <DependentUpon>201908020449136_ValidationUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908020642221_AlterTableMigration.resx">
+      <DependentUpon>201908020642221_AlterTableMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908020646044_AlterTableMigration1.resx">
+      <DependentUpon>201908020646044_AlterTableMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908021238139_akki.resx">
+      <DependentUpon>201908021238139_akki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908021345481_FinalUpdate.resx">
+      <DependentUpon>201908021345481_FinalUpdate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
