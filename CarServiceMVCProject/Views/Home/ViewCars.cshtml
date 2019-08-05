@@ -51,7 +51,7 @@
                     <td>@item.Company</td>
                     <td>@item.Color</td>
                     <td>@Html.ActionLink(" ViewServices", "ViewServices", item, new { @class = "btn btn-primary fa-info-circle" })
-                    @Html.ActionLink("EditCar ", "EditCarForm", item, new { @class = "btn btn-success fa fa-edit" })
+                    @Html.ActionLink("EditCar ", "EditCarForm", new { item.Id}, new { @class = "btn btn-success fa fa-edit" })
                     @Html.ActionLink("Delete ", "DeleteCar", item, new { @class = "btn btn-danger fa fa-trash" })</td>
                 </tr>
             }

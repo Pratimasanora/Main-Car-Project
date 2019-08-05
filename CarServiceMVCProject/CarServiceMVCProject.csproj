@@ -239,6 +239,14 @@
     <Compile Include="Migrations\201908021345481_FinalUpdate.Designer.cs">
       <DependentUpon>201908021345481_FinalUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908050819139_abc.cs" />
+    <Compile Include="Migrations\201908050819139_abc.Designer.cs">
+      <DependentUpon>201908050819139_abc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908050827077_abcd.cs" />
+    <Compile Include="Migrations\201908050827077_abcd.Designer.cs">
+      <DependentUpon>201908050827077_abcd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Car.cs" />
@@ -369,6 +377,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908021345481_FinalUpdate.resx">
       <DependentUpon>201908021345481_FinalUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908050819139_abc.resx">
+      <DependentUpon>201908050819139_abc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908050827077_abcd.resx">
+      <DependentUpon>201908050827077_abcd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

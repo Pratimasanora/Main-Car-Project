@@ -120,7 +120,7 @@ namespace CarServiceMVCProject.Controllers
             var user = _context.Users.Find(User.Identity.GetUserId());
                 var viewmodel = new CustomerCarViewModel
                 {
-                    ApplicationUser = applicationUser,
+                    ApplicationUser = user,
                     Cars = _context.Cars.ToList()
                 };
 
@@ -129,10 +129,10 @@ namespace CarServiceMVCProject.Controllers
 
         public ActionResult ViewCars(ApplicationUser applicationUser)
         {
-            var user = _context.Users.Find(User.Identity.GetUserId());
+            var user = _context.Users.Find(applicationUser.Id);
             var viewmodel = new CustomerCarViewModel
             {
-                ApplicationUser = applicationUser,
+                ApplicationUser = user,
                 Cars = _context.Cars.ToList()
             };
 
@@ -181,16 +181,18 @@ namespace CarServiceMVCProject.Controllers
         }
                
 
-        public ActionResult EditCarForm()
+        public ActionResult EditCarForm(int ? id)
         {
-            return View();
+            var car=_context.Cars.Find(id);
+            return View(car);
         }
 
         [HttpPost]
         public ActionResult EditCar(Car car)
         {
-            var customer = _context.Users.Find(car.ApplicationUserId);
             var carindb = _context.Cars.Find(car.Id);
+
+            var customer = _context.Users.Find(car.ApplicationUserId);
             carindb.VIN = car.VIN;
             carindb.Model = car.Model;
             carindb.Style = car.Style;
@@ -198,7 +200,7 @@ namespace CarServiceMVCProject.Controllers
             carindb.Color = car.Color;
 
             _context.SaveChanges();
-            return RedirectToAction("viewcars", "home", customer);
+            return RedirectToAction("ViewCars", "home", customer);
         }
 
 
@@ -213,14 +215,14 @@ namespace CarServiceMVCProject.Controllers
             return View(viewmodel);
         }
 
-        public ActionResult AddService(ServiceViewModel serviceviewmodel)
+        public ActionResult AddService(ServiceViewModel serviceViewModel)
         {
-            serviceviewmodel.Service.CarId = serviceviewmodel.Car.Id;
-            serviceviewmodel.Service.DateAdded =DateTime.Today;
-            var car = _context.Cars.Find(serviceviewmodel.Car.Id);
-            _context.Services.Add(serviceviewmodel.Service);
+            serviceViewModel.Service.CarId = serviceViewModel.Car.Id;
+             serviceViewModel.Service.DateAdded =DateTime.Today;
+            var car = _context.Cars.Find(serviceViewModel.Car.Id);
+            _context.Services.Add(serviceViewModel.Service);
             _context.SaveChanges();
-            return RedirectToAction("viewservices", "home", car);
+            return RedirectToAction("viewservices","Home", car);
 
         }
 

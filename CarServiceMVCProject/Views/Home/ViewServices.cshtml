@@ -26,32 +26,38 @@
 
 @using (Html.BeginForm("AddService", "Home"))
 {
-    <div style="color:white">
-        <div class="form-group">
-            @Html.LabelFor(m => m.Service.Miles)
-            @Html.TextBoxFor(m => m.Service.Miles, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Service.Miles)
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Service.Price)
-            @Html.TextBoxFor(m => m.Service.Price, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Service.Price)
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.Service.Details)
-            @Html.TextBoxFor(m => m.Service.Details, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Service.Details)
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.ServiceType)
-            @Html.DropDownListFor(m => m.Service.ServiceTypeId, new SelectList(Model.ServiceType, "Id", "ServiceName"),
-                                                                        "Select service type", new { @class = "form-control" })
-
-        </div>
-        @Html.HiddenFor(m => m.Car.Id)
-        @Html.ValidationSummary()
-        <button class="btn btn-primary" type="submit">Add Service</button>
+<div style="color:white">
+    <div class="form-group">
+        @Html.LabelFor(m => m.Service.Miles)
+        @Html.TextBoxFor(m => m.Service.Miles, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Service.Miles)
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Service.Price)
+        @Html.TextBoxFor(m => m.Service.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Service.Price)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Service.Details)
+        @Html.TextBoxFor(m => m.Service.Details, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Service.Details)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ServiceType)
+        @Html.DropDownListFor(m => m.Service.ServiceTypeId, new SelectList(Model.ServiceType, "Id", "ServiceName"),
+                                                                         "Select service type", new { @class = "form-control" })
+
+    </div>
+    
+    @Html.HiddenFor(m => m.Car.Id)
+    @Html.HiddenFor(m => m.Car.Company)
+    @Html.HiddenFor(m => m.Car.Model)
+    @Html.HiddenFor(m => m.Car.Style)
+    @Html.HiddenFor(m => m.Car.Color)
+    @Html.ValidationSummary()
+    
+    <button class="btn btn-primary" type="submit">Add Service</button>
+</div>
 
 }
 @{int count = 0;}
@@ -192,6 +198,7 @@
 @Html.HiddenFor(m => m.Car.Model)
 @Html.HiddenFor(m => m.Car.Style)
 @Html.HiddenFor(m => m.Car.Color)
+@Html.ValidationSummary()
 
 
 
