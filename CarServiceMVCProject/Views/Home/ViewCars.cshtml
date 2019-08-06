@@ -3,31 +3,29 @@
     ViewBag.Title = "ViewCars";
 }
 
-<h2>View Cars</h2>
+<h2 style="color:white">View Cars</h2>
 <div id="CustomerDetailsDiv">
     <table class="table table-bordered table-hover table-responsive table-striped"  style="background-color:white"   >
+       
+       <tr>
+           <th>FirstName</th>
+           <th>LastName</th>
+           <th>Email</th>
+       </tr>
         <tr>
-            <td>FirstName:</td>
-            <td><span>@Model.ApplicationUser.FirstName</span></td>
-        </tr>
-        <tr>
-            <td>LastName:</td>
+            <td>
+                @Model.ApplicationUser.FirstName
+            </td>
             <td>@Model.ApplicationUser.LastName</td>
-        </tr>
-        <tr>
-            <td>Email:</td>
             <td>@Model.ApplicationUser.Email</td>
         </tr>
-        @*<tr>
-            <td>Address:</td>
-            <td>@Model.ApplicationUser.Address @Model.ApplicationUser.City @Model.Customers.PostalCode</td>
-        </tr>*@
 
     </table>
 </div>
 
-@Html.ActionLink("Add New Car", "AddNewCarForm", Model.ApplicationUser, new { @class = "btn" })
-
+<button class="btn" style="border-radius:8px">@Html.ActionLink("Add New Car", "AddNewCarForm", Model.ApplicationUser, new { @class = "btn" })</button>
+<br />
+<br />
 <div id="CarDetailsDiv">
     <table class="table  table-bordered table-hover table-responsive table-striped"  style="background-color:white" >
         <tr>

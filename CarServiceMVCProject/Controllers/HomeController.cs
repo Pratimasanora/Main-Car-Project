@@ -26,12 +26,12 @@ namespace CarServiceMVCProject.Controllers
             return View();
         }
 
-        //public ActionResult Contact()
-        //{
-        //    ViewBag.Message = "Your contact page.";
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
 
-        //    return View();
-        //}
+            return View();
+        }
 
         public ActionResult About()
         {
@@ -41,26 +41,10 @@ namespace CarServiceMVCProject.Controllers
             return View(customers);
 
         }
-
         public ActionResult AddCustomerForm()
         {
             return RedirectToAction("Register","Account");
         }
-
-        //[HttpPost]
-        //public ActionResult AddCustomerForm(ApplicationUser applicationUser)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        _context.Users.Add(applicationUser);
-        //        _context.SaveChanges();
-        //        return RedirectToAction("About", "Home");
-        //    }
-        //}
 
         public ActionResult AddCustomer(ApplicationUser applicationUser)
         {

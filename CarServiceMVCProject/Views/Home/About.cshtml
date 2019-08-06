@@ -32,9 +32,7 @@
                 <th>LastName</th>
                 <th>PhoneNumber</th>
                 <th>Email</th>
-                @*<th>Address</th>*@
-                @*<th>City</th>
-                    <th>PostalCode</th>*@
+               
             </tr>
             @foreach (var item in Model)
             {
@@ -43,12 +41,10 @@
                     <td>@item.LastName</td>
                     <td>@item.PhoneNumber</td>
                     <td>@item.Email</td>
-                    @*<td>@item.Address</td>
-                        <td>@item.City</td>
-                        <td>@item.PostalCode</td>*@
-                    <td>@Html.ActionLink("ViewCars ", "ViewCars", item, new { @class = "btn btn-success fa-info-circle" })</td>
+                   
+                    <td>@Html.ActionLink("ViewCars", "ViewCars", item, new { @class = "btn btn-success fa-info-circle" })</td>
                     <td>@Html.ActionLink("Edit ", "EditCustomerForm", new { item.Id }, new { @class = "btn btn-primary fa fa-edit" }) <span class="glyphicon glyphicon-pencil"></span></td>
-                    <td>@Html.ActionLink("Delete ", "DeleteCustomer","Home", item, new { @class = "btn btn-danger fa fa-trash" })</td>
+                    <td>@Html.ActionLink("Delete ", "DeleteCustomer","Home", item, new { @class = "btn btn-danger fa fa-trash" })<span class="glyphicon glyphicon-trash"></span></td>
                 </tr>
             }
         </tbody>

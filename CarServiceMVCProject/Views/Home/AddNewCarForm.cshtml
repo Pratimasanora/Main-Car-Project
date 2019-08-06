@@ -3,11 +3,11 @@
     ViewBag.Title = "NEW CAR";
 }
 
-<h2>New Car</h2>
+<h2 style="color:white">New Car</h2>
 
 @using (Html.BeginForm("AddNewCar", "Home"))
 {<div style="color:white">
-     <div class="form-group">
+     <div class="form-group" >
          @Html.LabelFor(m => m.GetCar.VIN)
          @Html.TextBoxFor(m => m.GetCar.VIN, new { @class = "form-control" })
          @Html.ValidationMessageFor(m => m.GetCar.VIN)
@@ -37,7 +37,7 @@
     @Html.HiddenFor(m=> m.GetCustomer.LastName)
     @Html.HiddenFor(m=> m.GetCustomer.Email)
     
-    @*@Html.ValidationSummary()*@
+    @Html.ValidationSummary()
     <button class="btn btn-primary" type="submit">Save</button>
 </div>
 }
